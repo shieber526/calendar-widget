@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar Widget</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .calendar {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <p id="date"></p>
+    </div>
+
+    <script>
+        function updateDate() {
+            const today = new Date();
+            const month = today.toLocaleString('default', { month: 'long' });
+            const day = today.getDate();
+            document.getElementById('date').innerText = `${month} ${day}`;
+        }
+
+        updateDate();
+    </script>
+</body>
+</html>
